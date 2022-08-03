@@ -19,11 +19,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
     sidebarItems = [
         { label: 'Home', url: 'screen/home', iconClass: 'eui-icon-home' },
-        { label: 'Module 1', url: 'screen/module1', iconClass: 'eui-icon-work', children: [
-            { label: 'page 1', url: 'screen/module1/page1' },
-            { label: 'page 2', url: 'screen/module1/page2' },
-        ] },
-        { label: 'Module 2', url: 'screen/module2', iconClass: 'eui-icon-work' },
+        {
+            label: 'Module 1', url: 'screen/module1', iconClass: 'eui-icon-work', children: [
+                { label: 'page 1', url: 'screen/module1/page1' },
+                { label: 'page 2', url: 'screen/module1/page2' },
+            ]
+        },
+        { label: 'Cocktail db', url: 'screen/module2', iconClass: 'eui-icon-work' },
     ];
     notificationItems = [
         { label: 'Title label 1', subLabel: 'Subtitle label' },
@@ -35,11 +37,11 @@ export class AppComponent implements OnInit, OnDestroy {
     constructor(
         private store: Store<any>,
     ) {
-            this.userState = <any>this.store.select(getUserState);
-            this.subs.push(this.userState.subscribe((user: UserState) => {
-                this.userInfos = { ...user };
-                console.log(user);
-            }));
+        this.userState = <any>this.store.select(getUserState);
+        this.subs.push(this.userState.subscribe((user: UserState) => {
+            this.userInfos = { ...user };
+            console.log(user);
+        }));
     }
 
     ngOnInit() {

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { AppStarterService } from './app-starter.service';
         BrowserAnimationsModule,
         CoreModule,
         AppRoutingModule,
+        HttpClientModule
     ],
     providers: [
         AppStarterService,
@@ -34,4 +36,4 @@ import { AppStarterService } from './app-starter.service';
         AppComponent,
     ],
 })
-export class AppModule {}
+export class AppModule { }

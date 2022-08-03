@@ -26,15 +26,16 @@ export class AppStarterService {
     }
 
     start(): Observable<any> {
+        return of(true)
 
-        return zip(
-            this.initUserService().pipe(
-                switchMap((userStatus) => {
-                    console.log(userStatus);
-                    return this.i18nService.init();
-                }),
-            ),
-        );
+        // return zip(
+        //     this.initUserService().pipe(
+        //         switchMap((userStatus) => {
+        //             console.log(userStatus);
+        //             return this.i18nService.init();
+        //         }),
+        //     ),
+        // );
     }
 
     /**

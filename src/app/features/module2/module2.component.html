@@ -1,7 +1,35 @@
 <eui-page>
-    <eui-page-header label="Module 2"></eui-page-header>
+    <eui-page-header label="Contacts"></eui-page-header>
 
     <eui-page-content>
-        Module 2 content
+        <table euiTable [rows]="dataSource">
+            <ng-template euiTemplate="header">
+                <tr>
+                    <th>Title</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Nationality</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Date of birth</th>
+                </tr>
+            </ng-template>
+            <ng-template let-row euiTemplate="body">
+                <tr>
+                    <td>{{ row.name.title }}</td>
+                    <td>{{ row.name.first }}</td>
+                    <td>{{ row.name.last }}</td>
+                    <td>{{ row.nat }}</td>
+                    <td>{{ row.email }}</td>
+                    <td>{{ row.phone }}</td>
+                    <td>{{ row.dob.date | date:'mediumDate' }}</td>
+                </tr>
+            </ng-template>
+            <ng-template euiTemplate="emptyMessage">
+                <tr>
+                    <td class="eui-u-text-center" colspan="5">No data</td>
+                </tr>
+            </ng-template>
+        </table>
     </eui-page-content>
 </eui-page>

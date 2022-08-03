@@ -4,7 +4,7 @@
   "newProjectRoot": "projects",
   "defaultProject": "app",
   "cli": {
-      "analytics": false
+    "analytics": false
   },
   "projects": {
     "app": {
@@ -44,9 +44,9 @@
                 "output": "./assets"
               },
               {
-                  "glob": "**/*",
-                  "input": "node_modules/@eui/ecl-core/assets/",
-                  "output": "./assets"
+                "glob": "**/*",
+                "input": "node_modules/@eui/ecl-core/assets/",
+                "output": "./assets"
               }
             ],
             "styles": [
@@ -72,25 +72,25 @@
               "vendorChunk": false,
               "buildOptimizer": false,
               "budgets": [
-                  {
-                      "type": "initial",
-                      "maximumWarning": "2mb",
-                      "maximumError": "11mb"
-                  }
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "11mb"
+                }
               ]
             },
             "production-optimized": {
               "fileReplacements": [
-                  {
-                    "replace": "src/environments/environment.ts",
-                    "with": "src/environments/environment.prod.ts"
-                  }
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
               ],
               "optimization": {
                 "scripts": true,
                 "styles": {
-                    "minify": false,
-                    "inlineCritical": true
+                  "minify": false,
+                  "inlineCritical": true
                 },
                 "fonts": true
               },
@@ -102,40 +102,38 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "budgets": [
-                  {
-                      "type": "initial",
-                      "maximumWarning": "2mb",
-                      "maximumError": "6mb"
-                  }
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "6mb"
+                }
               ]
             },
             "development": {
-                "buildOptimizer": false,
-                "optimization": false,
-                "vendorChunk": true,
-                "extractLicenses": false,
-                "sourceMap": true,
-                "namedChunks": true
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-              "browserTarget": "app:build"
-          },
+          "options": {},
           "configurations": {
-              "proxy-mock": {
-                  "browserTarget": "app:build:development",
-                  "proxyConfig": "proxy-mock.conf.json"
-              },
-              "production": {
-                  "browserTarget": "app:build:production"
-              },
-              "development": {
-                "browserTarget": "app:build:development"
-              }
+            "proxy-mock": {
+              "browserTarget": "app:build:development",
+              "proxyConfig": "proxy-mock.conf.json"
+            },
+            "production": {
+              "browserTarget": "app:build:production"
+            },
+            "development": {
+              "browserTarget": "app:build:development"
+            }
           },
           "defaultConfiguration": "development"
         },
