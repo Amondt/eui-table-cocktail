@@ -5,19 +5,22 @@
         <eui-card euiNoContentPadding>
             <eui-card-header>
                 <eui-card-header-title>
-                    <eui-badge euiPrimary>{{ filteredData.length }}</eui-badge>
+                    <eui-badge euiSizeM euiPrimary>{{ filteredData.length }}</eui-badge>
                     contacts found
                 </eui-card-header-title>
                 <eui-card-header-right-content>
-                    <div class="eui-u-flex">
-                        <div class="eui-u-mr-s">
-                            <eui-slide-toggle (changed)="isCompact = !isCompact"></eui-slide-toggle>
-                            Compact
-                        </div>
-                        <eui-table-filter #filter placeholder="Search filter..."
-                            (filterChange)="onFilterChange($event)">
-                        </eui-table-filter>
+                    <div class="eui-u-mr-s">
+                        <eui-slide-toggle (changed)="isCompact = !isCompact"></eui-slide-toggle>
+                        Compact
                     </div>
+
+                    <div [formGroup]="form" class="eui-u-mr-s">
+                        <ux-dropdown-tree formControlName="colsFilter" placeholder="Select..." [nodes]="colsValues"
+                            hasSelectAll></ux-dropdown-tree>
+                    </div>
+
+                    <eui-table-filter #filter placeholder="Search filter..." (filterChange)="onFilterChange($event)">
+                    </eui-table-filter>
                 </eui-card-header-right-content>
             </eui-card-header>
             <eui-card-content>
@@ -27,29 +30,36 @@
                         [paginator]="paginator" [filter]="filter">
                         <ng-template euiTemplate="header">
                             <tr>
-                                <th></th>
-                                <th>Title</th>
-                                <th>First name</th>
-                                <th>Last name</th>
-                                <th>Nationality</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Date of birth</th>
+                                <th *ngIf="visibleCols.length > 0"></th>
+                                <th *ngIf="visibleCols.indexOf('title') !== -1">Title</th>
+                                <th *ngIf="visibleCols.indexOf('first') !== -1">First name</th>
+                                <th *ngIf="visibleCols.indexOf('last') !== -1">Last name</th>
+                                <th *ngIf="visibleCols.indexOf('nat') !== -1">Nationality</th>
+                                <th *ngIf="visibleCols.indexOf('email') !== -1">Email</th>
+                                <th *ngIf="visibleCols.indexOf('phone') !== -1">Phone</th>
+                                <th *ngIf="visibleCols.indexOf('dob') !== -1">Date of birth</th>
                             </tr>
                         </ng-template>
                         <ng-template let-row euiTemplate="body">
                             <tr>
-                                <td>
+                                <td *ngIf="visibleCols.length > 0">
                                     <img [src]="row.picture.thumbnail" alt="Profile picture" class="eui-u-mr-m"
                                         style="margin-top: .4rem; aspect-ratio: 1; border: 2px solid white; border-radius: 50%; height: 2.5rem; width: 2.5rem;">
                                 </td>
-                                <td data-col-label="Title">{{ row.name.title }}</td>
-                                <td data-col-label="First name">{{ row.name.first }}</td>
-                                <td data-col-label="Last name">{{ row.name.last }}</td>
-                                <td data-col-label="Nationality">{{ row.nat }}</td>
-                                <td data-col-label="Email">{{ row.email }}</td>
-                                <td data-col-label="Phone">{{ row.phone }}</td>
-                                <td data-col-label="Date of birth">{{ row.dob.date | date:'mediumDate' }}</td>
+                                <td data-col-label="Title" *ngIf="visibleCols.indexOf('title') !== -1">{{ row.name.title
+                                    }}</td>
+                                <td data-col-label="First name" *ngIf="visibleCols.indexOf('first') !== -1">{{
+                                    row.name.first }}</td>
+                                <td data-col-label="Last name" *ngIf="visibleCols.indexOf('last') !== -1">{{
+                                    row.name.last }}</td>
+                                <td data-col-label="Nationality" *ngIf="visibleCols.indexOf('nat') !== -1">{{ row.nat }}
+                                </td>
+                                <td data-col-label="Email" *ngIf="visibleCols.indexOf('email') !== -1">{{ row.email }}
+                                </td>
+                                <td data-col-label="Phone" *ngIf="visibleCols.indexOf('phone') !== -1">{{ row.phone }}
+                                </td>
+                                <td data-col-label="Date of birth" *ngIf="visibleCols.indexOf('dob') !== -1">{{
+                                    row.dob.date | date:'mediumDate' }}</td>
                             </tr>
                         </ng-template>
                         <ng-template euiTemplate="emptyMessage">
