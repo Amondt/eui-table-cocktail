@@ -19,6 +19,8 @@ import { EuiTableComponent } from '@eui/components/eui-table';
 export class Module2Component implements OnInit {
     constructor(private http: HttpClient) { }
 
+    public isCompact: boolean = false;
+
     public dataSource: any[] = [];
     public filteredData: any[] = [];
 
@@ -31,7 +33,6 @@ export class Module2Component implements OnInit {
             this.dataSource = res.results;
             this.filteredData = this.dataSource;
         })
-        // http://www.thecocktaildb.com/api/json/v1/1/random.php
     }
 
     public onFilterChange(event: any) {

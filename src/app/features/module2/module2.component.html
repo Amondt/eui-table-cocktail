@@ -9,14 +9,21 @@
                     contacts found
                 </eui-card-header-title>
                 <eui-card-header-right-content>
-                    <eui-table-filter #filter placeholder="Search filter..." (filterChange)="onFilterChange($event)">
-                    </eui-table-filter>
+                    <div class="eui-u-flex">
+                        <div>
+                            <eui-slide-toggle (changed)="isCompact = !isCompact"></eui-slide-toggle>
+                            Compact
+                        </div>
+                        <eui-table-filter #filter placeholder="Search filter..."
+                            (filterChange)="onFilterChange($event)">
+                        </eui-table-filter>
+                    </div>
                 </eui-card-header-right-content>
             </eui-card-header>
             <eui-card-content>
                 <!-- The optional scrollable wrapper around the table allows dynamic scroll when the table is too big -->
                 <div class="eui-table__scrollable-wrapper">
-                    <table #euiTable euiTable euiTableCompact euiTableResponsive [rows]="dataSource"
+                    <table #euiTable euiTable [euiTableCompact]="isCompact" euiTableResponsive [rows]="dataSource"
                         [paginator]="paginator" [filter]="filter">
                         <ng-template euiTemplate="header">
                             <tr>
