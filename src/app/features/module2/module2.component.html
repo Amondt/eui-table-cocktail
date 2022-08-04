@@ -10,7 +10,7 @@
                 </eui-card-header-title>
                 <eui-card-header-right-content>
                     <div class="eui-u-flex">
-                        <div>
+                        <div class="eui-u-mr-s">
                             <eui-slide-toggle (changed)="isCompact = !isCompact"></eui-slide-toggle>
                             Compact
                         </div>
@@ -43,13 +43,13 @@
                                     <img [src]="row.picture.thumbnail" alt="Profile picture" class="eui-u-mr-m"
                                         style="margin-top: .4rem; aspect-ratio: 1; border: 2px solid white; border-radius: 50%; height: 2.5rem; width: 2.5rem;">
                                 </td>
-                                <td>{{ row.name.title }}</td>
-                                <td>{{ row.name.first }}</td>
-                                <td>{{ row.name.last }}</td>
-                                <td>{{ row.nat }}</td>
-                                <td>{{ row.email }}</td>
-                                <td>{{ row.phone }}</td>
-                                <td>{{ row.dob.date | date:'mediumDate' }}</td>
+                                <td data-col-label="Title">{{ row.name.title }}</td>
+                                <td data-col-label="First name">{{ row.name.first }}</td>
+                                <td data-col-label="Last name">{{ row.name.last }}</td>
+                                <td data-col-label="Nationality">{{ row.nat }}</td>
+                                <td data-col-label="Email">{{ row.email }}</td>
+                                <td data-col-label="Phone">{{ row.phone }}</td>
+                                <td data-col-label="Date of birth">{{ row.dob.date | date:'mediumDate' }}</td>
                             </tr>
                         </ng-template>
                         <ng-template euiTemplate="emptyMessage">
