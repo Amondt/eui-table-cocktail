@@ -38,6 +38,7 @@
                                 <th *ngIf="visibleCols.indexOf('email') !== -1">Email</th>
                                 <th *ngIf="visibleCols.indexOf('phone') !== -1">Phone</th>
                                 <th *ngIf="visibleCols.indexOf('dob') !== -1">Date of birth</th>
+                                <th *ngIf="visibleCols.length > 0">Actions</th>
                             </tr>
                         </ng-template>
                         <ng-template let-row euiTemplate="body">
@@ -60,6 +61,22 @@
                                 </td>
                                 <td data-col-label="Date of birth" *ngIf="visibleCols.indexOf('dob') !== -1">{{
                                     row.dob.date | date:'mediumDate' }}</td>
+                                <td data-col-label="Actions" *ngIf="visibleCols.length > 0">
+                                    <div class="eui-u-flex">
+                                        <button euiButton euiBasicButton euiRounded euiIconButton euiInfo euiSizeS
+                                            euiTooltip="View detail" euiTooltipInfo (click)="onRowDetail(row)">
+                                            <span euiIcon iconClass="eui-icon eui-icon-visibility"></span>
+                                        </button>
+                                        <button euiButton euiBasicButton euiRounded euiIconButton euiPrimary euiSizeS
+                                            euiTooltip="Edit" euiTooltipPrimary (click)="onRowEdit(row)">
+                                            <span euiIcon iconClass="eui-icon eui-icon-pencil"></span>
+                                        </button>
+                                        <button euiButton euiBasicButton euiRounded euiIconButton euiDanger euiSizeS
+                                            euiTooltip="Delete" euiTooltipDanger (click)="onRowDelete(row)">
+                                            <span euiIcon iconClass="eui-icon eui-icon-delete"></span>
+                                        </button>
+                                    </div>
+                                </td>
                             </tr>
                         </ng-template>
                         <ng-template euiTemplate="emptyMessage">

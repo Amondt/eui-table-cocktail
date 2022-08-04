@@ -52,4 +52,19 @@ export class Module2Component implements OnInit {
     public onFilterChange(event: any) {
         this.filteredData = this.euiTable.filterRows(event, this.dataSource);
     }
+
+    public onRowDetail(row: any) {
+        console.log('onRowDetail() selected row:', row);
+        // this.showGrowlHTML('info', 'Selected row to VIEW details', row);
+    }
+
+    public onRowEdit(row: any) {
+        console.log('onEdit() selected row:', row);
+        // this.showGrowlHTML('info', 'Selected row to EDIT', row);
+    }
+
+    public onRowDelete(row: any) {
+        console.log('onDelete() selected row:', row);
+        // this.showGrowlHTML('danger', 'Selected row to DELETE', row);
+    }
 }
