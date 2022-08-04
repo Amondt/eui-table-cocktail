@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
+import { UxAppShellService } from '@eui/core';
 import { EuiTableComponent } from '@eui/components/eui-table';
 import { UxLink } from '@eui/base';
 
@@ -12,6 +13,14 @@ import { UxLink } from '@eui/base';
     encapsulation: ViewEncapsulation.None,
 })
 export class Module2Component implements OnInit {
+
+    isGrowlSticky = false;
+    isGrowlMultiple = false;
+    growlLife = 3000;
+    position = 'bottom-right';
+    summaryTitle = "";
+    messageDetail = "";
+
     public isCompact: boolean = false;
 
     public dataSource: any[] = [];
@@ -31,7 +40,7 @@ export class Module2Component implements OnInit {
 
     @ViewChild('euiTable') euiTable: EuiTableComponent;
 
-    constructor(private http: HttpClient, private fb: FormBuilder) { }
+    constructor(private http: HttpClient, private fb: FormBuilder, private asService: UxAppShellService) { }
 
     ngOnInit() {
         this.http.get("https://randomuser.me/api/?results=50").subscribe((res: any) => {
@@ -55,16 +64,38 @@ export class Module2Component implements OnInit {
 
     public onRowDetail(row: any) {
         console.log('onRowDetail() selected row:', row);
-        // this.showGrowlHTML('info', 'Selected row to VIEW details', row);
+        this.summaryTitle = "Detail item";
+        this.messageDetail = JSON.stringify(row.name);
+        this.showGrowl('info');
     }
 
     public onRowEdit(row: any) {
         console.log('onEdit() selected row:', row);
-        // this.showGrowlHTML('info', 'Selected row to EDIT', row);
+        this.summaryTitle = "Edit item";
+        this.messageDetail = JSON.stringify(row.name);
+        this.showGrowl('info');
     }
 
     public onRowDelete(row: any) {
         console.log('onDelete() selected row:', row);
-        // this.showGrowlHTML('danger', 'Selected row to DELETE', row);
+        this.summaryTitle = "Delete item";
+        this.messageDetail = JSON.stringify(row.name);
+        this.showGrowl('danger');
+    }
+
+    showGrowl(type: string) {
+        if (!type) {
+            type = 'info';
+        }
+        this.asService.growl({
+            severity: type,
+            summary: this.summaryTitle,
+            detail: this.messageDetail
+        },
+            this.isGrowlSticky,
+            this.isGrowlMultiple,
+            this.growlLife,
+            this.position,
+        );
     }
 }
