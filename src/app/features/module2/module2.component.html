@@ -20,6 +20,7 @@
                         [paginator]="paginator" [filter]="filter">
                         <ng-template euiTemplate="header">
                             <tr>
+                                <th></th>
                                 <th>Title</th>
                                 <th>First name</th>
                                 <th>Last name</th>
@@ -31,6 +32,10 @@
                         </ng-template>
                         <ng-template let-row euiTemplate="body">
                             <tr>
+                                <td>
+                                    <img [src]="row.picture.thumbnail" alt="Profile picture" class="eui-u-mr-m"
+                                        style="margin-top: .4rem; aspect-ratio: 1; border: 2px solid white; border-radius: 50%; height: 2.5rem; width: 2.5rem;">
+                                </td>
                                 <td>{{ row.name.title }}</td>
                                 <td>{{ row.name.first }}</td>
                                 <td>{{ row.name.last }}</td>
