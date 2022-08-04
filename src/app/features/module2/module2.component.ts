@@ -24,7 +24,7 @@ export class Module2Component implements OnInit {
     public dataSourceEmpty: any[] = [];
 
     ngOnInit() {
-        this.http.get("https://randomuser.me/api/?results=20").subscribe((res: any) => {
+        this.http.get("https://randomuser.me/api/?results=50").subscribe((res: any) => {
             console.log(res.results);
 
             this.dataSource = res.results;

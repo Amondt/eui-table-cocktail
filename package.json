@@ -20,6 +20,6 @@
     },
     "private": true,
     "dependencies": {
-        "@eui/deps-base": "14.0.2"
+        "@eui/deps-base": "14.0.3"
     }
 }

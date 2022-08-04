@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
                 { label: 'page 2', url: 'screen/module1/page2' },
             ]
         },
-        { label: 'Cocktail db', url: 'screen/module2', iconClass: 'eui-icon-work' },
+        { label: 'Contacts', url: 'screen/module2', iconClass: 'eui-icon-work' },
     ];
     notificationItems = [
         { label: 'Title label 1', subLabel: 'Subtitle label' },

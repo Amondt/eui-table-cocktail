@@ -1565,31 +1565,31 @@
   resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@eui/base@14.0.2":
-  version "14.0.2"
-  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/base/-/base-14.0.2.tgz#b3514de78dd10d20b1fdc1a397478185bd119949"
-  integrity sha512-IaxD8Ru+j/uJoh4MlmtQH9rQehoz4yrixe9gnxmfVifL7Gt6SWRuASBsCftocNQnMXDp4HMIp3v3k8px76J6Ow==
+"@eui/base@14.0.3":
+  version "14.0.3"
+  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/base/-/base-14.0.3.tgz#7792b5e20b05f19bc7bfe5c0420402418239e63c"
+  integrity sha512-Pei1AtMHXj5OJJaTrgXoigQWhUq5DzJyqnrq/DGItTw4m5nv4Tc//NAphjlPwQ19QsWNKEmOwsQpQWOg0BfejQ==
   dependencies:
     tslib "^2.3.0"
 
-"@eui/components@14.0.2":
-  version "14.0.2"
-  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/components/-/components-14.0.2.tgz#a9b75535055797d512a5155c9987124011ff83f2"
-  integrity sha512-0/xXr6m8qv0KYeEXmhCs3LmdzuKSOJpCm65PfN4FEk5P7upj3+7xb/UtnpoQvTvXZiLzf0oeIZIrke/XsrEFfQ==
+"@eui/components@14.0.3":
+  version "14.0.3"
+  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/components/-/components-14.0.3.tgz#013fa4de7d6433c4bc85c3e89ce3c0e28adb2f29"
+  integrity sha512-vUHRb9xsnl1w47UIMI7giQcs5NAdqYoQ/5yNVI7ZV0U+6LiAhlRfwrFcbtzy18e8UgLpGn+lTsMeUxqRtCKnkA==
   dependencies:
     tslib "^2.3.0"
 
-"@eui/core@14.0.2":
-  version "14.0.2"
-  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/core/-/core-14.0.2.tgz#853ea7f4c438132c43cd2c0dd5587fc9f13d7374"
-  integrity sha512-XvQFSlAPhuSR9lRdKHxRMUsIXsdPhVzu+9+cjIHXhTWDzHETAtZDVRfZtjahH3Okpj2LszJr+yVtlx7K5taL5Q==
+"@eui/core@14.0.3":
+  version "14.0.3"
+  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/core/-/core-14.0.3.tgz#5836813b9304cad2731ca955c3fa7f3575fb206f"
+  integrity sha512-ulAqkTGKTsFY3xq1OH0KaWMYOJKVEK0mdOJTqjtZOTkzl2qkx4yY0EKSJsASALFYGEAVrqy7ML0PlR4XIpT9tg==
   dependencies:
     tslib "^2.3.0"
 
-"@eui/deps-base@14.0.2":
-  version "14.0.2"
-  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/deps-base/-/deps-base-14.0.2.tgz#4a08dd057aee0d6271591bb84872627c8707160d"
-  integrity sha512-CcL0aV2G/wS/fTr/WES4nQaDxA8y53YkeWVvonxFJZwbDiyw7NzPkvxMqkq5gEYTjilK3lp+adDA91p6iaqLUw==
+"@eui/deps-base@14.0.3":
+  version "14.0.3"
+  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/deps-base/-/deps-base-14.0.3.tgz#5d159e9d9708362197e0994986d39a7969a2dd13"
+  integrity sha512-YIoVG5FXHrkh27bvBDMJrpHkRvpNKxMkwgtC8gf5Ok4QOgqM2bx2mgdD8xjLlCskiWFiBVbAM5ZYUe38Q3bN1Q==
   dependencies:
     "@angular-devkit/build-angular" "14.0.2"
     "@angular/animations" "14.0.4"
@@ -1610,13 +1610,13 @@
     "@angular/service-worker" "14.0.4"
     "@compodoc/compodoc" "1.1.19"
     "@compodoc/ngd-transformer" "2.1.0"
-    "@eui/base" "14.0.2"
-    "@eui/components" "14.0.2"
-    "@eui/core" "14.0.2"
-    "@eui/showcase" "14.0.2"
-    "@eui/styles" "14.0.2"
+    "@eui/base" "14.0.3"
+    "@eui/components" "14.0.3"
+    "@eui/core" "14.0.3"
+    "@eui/showcase" "14.0.3"
+    "@eui/styles" "14.0.3"
     "@eui/styles-base" "14.0.1"
-    "@eui/tools" "5.3.27"
+    "@eui/tools" "5.3.37"
     "@netbasal/content-loader" "1.1.0"
     "@ngrx/effects" "13.2.0"
     "@ngrx/entity" "13.2.0"
@@ -1692,10 +1692,10 @@
     xhr-mock "2.5.1"
     zone.js "0.11.5"
 
-"@eui/showcase@14.0.2":
-  version "14.0.2"
-  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/showcase/-/showcase-14.0.2.tgz#1c8a66a00fa01e56c7f17719b34ee6ca7575ec4b"
-  integrity sha512-xulvlrBdY1ppjnzAurXooAgGXefBlIZLUlVTDzjYhTaOW3VDwAWoOxm++dzWyjz5w2j7wzovQHvKUYveNz8o4w==
+"@eui/showcase@14.0.3":
+  version "14.0.3"
+  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/showcase/-/showcase-14.0.3.tgz#42b740a99a7a947855eaafe79250278477454041"
+  integrity sha512-kJ5zwO25JFGWVEEsCF/gj2CCsAkvJuDcsofsstsZnbRRRw8RDcAxLJTmJYXx3gKtchXhcyWEWF2C4QsYThGBAA==
   dependencies:
     tslib "^2.3.0"
 
@@ -1704,15 +1704,15 @@
   resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/styles-base/-/styles-base-14.0.1.tgz#37302e7b87aecf382133d485cd59f809dbf40945"
   integrity sha512-+G4I0nYfcjwVlm+QF8or9r8faIX5kPw1D1g3Mh0YuLYaHIMbDot8Rs8njrL8TbNvz/S59HOQuo0sDBzHqwv7Rw==
 
-"@eui/styles@14.0.2":
-  version "14.0.2"
-  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/styles/-/styles-14.0.2.tgz#7fd7f1e001f4a37a2d650ab52bcfeea34885c13d"
-  integrity sha512-ENBTAu0ByA3AYI14/JCD55yU3kd0meziDkGhJFGjiAxfRk9gQI1nfX0qU3Vp+zT55HpAGmVYsGvtfZQIOoXdTQ==
+"@eui/styles@14.0.3":
+  version "14.0.3"
+  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/styles/-/styles-14.0.3.tgz#da95218cd73b6ce75b777f1095867abe19feec5f"
+  integrity sha512-RMdUVXsU/JelKuA4lOXifiD+G265L1BY15u/mymiuavoTZ5EbVL/72YMSswbnc5YloRpXkjNiUEO77HseUrbIA==
 
-"@eui/tools@5.3.27":
-  version "5.3.27"
-  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/tools/-/tools-5.3.27.tgz#82b519666b25ba1a0713d55c0118d97355891bbe"
-  integrity sha512-PaFYt5CnyDsZDi/fj+XWieQ3NxbHDVvTD4lB/d0RtSrmhC5XaIxewGaLSgAd/iTr0zXLnAzCFs5lJbvKt9Wjgg==
+"@eui/tools@5.3.37":
+  version "5.3.37"
+  resolved "https://csdr-nexus.devops.tech.ec.europa.eu/repository/npm-group/@eui/tools/-/tools-5.3.37.tgz#65638e55129eb8c6b34357dff4bd8084acf7a2d2"
+  integrity sha512-QVFTN/oENtWcn84oEo2ULXkISYD9vIVRuqYQNz6jgn9bYYsQRJ0MrP16uLhECLJH6BhUN816J73uH0RwgrxafQ==
   dependencies:
     autoprefixer "9.6.1"
     chai "4.3.6"
