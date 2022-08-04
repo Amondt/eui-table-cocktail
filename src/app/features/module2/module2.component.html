@@ -2,39 +2,56 @@
     <eui-page-header label="Contacts"></eui-page-header>
 
     <eui-page-content>
-        <!-- The optional scrollable wrapper around the table allows dynamic scroll when the table is too big -->
-        <div class="eui-table__scrollable-wrapper">
-            <table euiTable euiTableCompact euiTableResponsive [rows]="dataSource" [paginator]="paginator">
-                <ng-template euiTemplate="header">
-                    <tr>
-                        <th>Title</th>
-                        <th>First name</th>
-                        <th>Last name</th>
-                        <th>Nationality</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Date of birth</th>
-                    </tr>
-                </ng-template>
-                <ng-template let-row euiTemplate="body">
-                    <tr>
-                        <td>{{ row.name.title }}</td>
-                        <td>{{ row.name.first }}</td>
-                        <td>{{ row.name.last }}</td>
-                        <td>{{ row.nat }}</td>
-                        <td>{{ row.email }}</td>
-                        <td>{{ row.phone }}</td>
-                        <td>{{ row.dob.date | date:'mediumDate' }}</td>
-                    </tr>
-                </ng-template>
-                <ng-template euiTemplate="emptyMessage">
-                    <tr>
-                        <td class="eui-u-text-center" colspan="5">No data</td>
-                    </tr>
-                </ng-template>
-            </table>
-        </div>
+        <eui-card euiNoContentPadding>
+            <eui-card-header>
+                <eui-card-header-title>
+                    <eui-badge euiPrimary>{{ filteredData.length }}</eui-badge>
+                    contacts found
+                </eui-card-header-title>
+                <eui-card-header-right-content>
+                    <eui-table-filter #filter placeholder="Search filter..." (filterChange)="onFilterChange($event)">
+                    </eui-table-filter>
+                </eui-card-header-right-content>
+            </eui-card-header>
+            <eui-card-content>
+                <!-- The optional scrollable wrapper around the table allows dynamic scroll when the table is too big -->
+                <div class="eui-table__scrollable-wrapper">
+                    <table #euiTable euiTable euiTableCompact euiTableResponsive [rows]="dataSource"
+                        [paginator]="paginator" [filter]="filter">
+                        <ng-template euiTemplate="header">
+                            <tr>
+                                <th>Title</th>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Nationality</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Date of birth</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template let-row euiTemplate="body">
+                            <tr>
+                                <td>{{ row.name.title }}</td>
+                                <td>{{ row.name.first }}</td>
+                                <td>{{ row.name.last }}</td>
+                                <td>{{ row.nat }}</td>
+                                <td>{{ row.email }}</td>
+                                <td>{{ row.phone }}</td>
+                                <td>{{ row.dob.date | date:'mediumDate' }}</td>
+                            </tr>
+                        </ng-template>
+                        <ng-template euiTemplate="emptyMessage">
+                            <tr>
+                                <td class="eui-u-text-center" colspan="5">No data</td>
+                            </tr>
+                        </ng-template>
+                    </table>
+                </div>
 
-        <eui-table-paginator #paginator [pageSizeOptions]="[5, 10, 25, 50]" [pageSize]="10"></eui-table-paginator>
+                <eui-table-paginator #paginator [pageSizeOptions]="[5, 10, 25, 50]" [pageSize]="10"
+                    hasPageNumberNavigation [nbPageNumberNavigation]="5"></eui-table-paginator>
+            </eui-card-content>
+
+        </eui-card>
     </eui-page-content>
 </eui-page>
