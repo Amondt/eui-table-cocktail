@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-// import { EuiTableComponent } from '@eui/components-next';
+import { EuiTableComponent } from '@eui/components/eui-table';
 
 @Component({
     // tslint:disable-next-line
@@ -22,8 +22,7 @@ export class Module2Component implements OnInit {
     public dataSource: any[] = [];
     public filteredData: any[] = [];
 
-    // @ViewChild('euiTable') euiTable: EuiTableComponent;
-    @ViewChild('euiTable') euiTable;
+    @ViewChild('euiTable') euiTable: EuiTableComponent;
 
     ngOnInit() {
         this.http.get("https://randomuser.me/api/?results=50").subscribe((res: any) => {
