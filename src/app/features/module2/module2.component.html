@@ -63,10 +63,6 @@
                                     row.dob.date | date:'mediumDate' }}</td>
                                 <td data-col-label="Actions" *ngIf="visibleCols.length > 0">
                                     <div class="eui-u-flex">
-                                        <button euiButton euiBasicButton euiRounded euiIconButton euiInfo euiSizeS
-                                            euiTooltip="View detail" euiTooltipInfo (click)="onRowDetail(row)">
-                                            <span euiIcon iconClass="eui-icon eui-icon-visibility"></span>
-                                        </button>
                                         <button euiButton euiBasicButton euiRounded euiIconButton euiPrimary euiSizeS
                                             euiTooltip="Edit" euiTooltipPrimary (click)="onRowEdit(row)">
                                             <span euiIcon iconClass="eui-icon eui-icon-pencil"></span>

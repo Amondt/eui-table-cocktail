@@ -62,25 +62,19 @@ export class Module2Component implements OnInit {
         this.filteredData = this.euiTable.filterRows(event, this.dataSource);
     }
 
-    public onRowDetail(row: any) {
-        console.log('onRowDetail() selected row:', row);
-        this.summaryTitle = "Detail item";
-        this.messageDetail = JSON.stringify(row.name);
-        this.showGrowl('info');
-    }
-
     public onRowEdit(row: any) {
-        console.log('onEdit() selected row:', row);
-        this.summaryTitle = "Edit item";
-        this.messageDetail = JSON.stringify(row.name);
+        console.log('onEdit() selected row:', row.id);
+        this.summaryTitle = "Edit contact";
+        this.messageDetail = row.id.value;
         this.showGrowl('info');
     }
 
     public onRowDelete(row: any) {
-        console.log('onDelete() selected row:', row);
-        this.summaryTitle = "Delete item";
-        this.messageDetail = JSON.stringify(row.name);
+        console.log('onDelete() selected row:', row.id);
+        this.summaryTitle = "Delete contact";
+        this.messageDetail = row.id.value;
         this.showGrowl('danger');
+        this.dataSource = this.dataSource.filter(contact => contact.id.value !== row.id.value)
     }
 
     showGrowl(type: string) {
