@@ -32,12 +32,15 @@
                             <tr>
                                 <th *ngIf="visibleCols.length > 0"></th>
                                 <th *ngIf="visibleCols.indexOf('title') !== -1">Title</th>
-                                <th *ngIf="visibleCols.indexOf('first') !== -1">First name</th>
-                                <th *ngIf="visibleCols.indexOf('last') !== -1">Last name</th>
-                                <th *ngIf="visibleCols.indexOf('nat') !== -1">Nationality</th>
-                                <th *ngIf="visibleCols.indexOf('email') !== -1">Email</th>
-                                <th *ngIf="visibleCols.indexOf('phone') !== -1">Phone</th>
-                                <th *ngIf="visibleCols.indexOf('dob') !== -1">Date of birth</th>
+                                <th sortable sortOn="name.first" *ngIf="visibleCols.indexOf('first') !== -1">First name
+                                </th>
+                                <th sortable sortOn="name.last" *ngIf="visibleCols.indexOf('last') !== -1">Last name
+                                </th>
+                                <th sortable sortOn="nat" *ngIf="visibleCols.indexOf('nat') !== -1">Nationality</th>
+                                <th sortable sortOn="email" *ngIf="visibleCols.indexOf('email') !== -1">Email</th>
+                                <th sortable sortOn="phone" *ngIf="visibleCols.indexOf('phone') !== -1">Phone</th>
+                                <th sortable sortOn="dob.date" *ngIf="visibleCols.indexOf('dob') !== -1">Date of birth
+                                </th>
                                 <th *ngIf="visibleCols.length > 0">Actions</th>
                             </tr>
                         </ng-template>
