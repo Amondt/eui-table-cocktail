@@ -22,6 +22,7 @@ export class Module2Component implements OnInit {
     messageDetail = "";
 
     public isCompact: boolean = false;
+    public isEditMode: boolean = false;
 
     public dataSource: any[] = [];
     public filteredData: any[] = [];
@@ -60,6 +61,10 @@ export class Module2Component implements OnInit {
 
     public onFilterChange(event: any) {
         this.filteredData = this.euiTable.filterRows(event, this.dataSource);
+    }
+
+    public toggleEditMode(event: any): void {
+        this.isEditMode = !this.isEditMode;
     }
 
     public onRowEdit(row: any) {

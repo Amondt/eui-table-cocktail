@@ -19,8 +19,19 @@
                             hasSelectAll></ux-dropdown-tree>
                     </div>
 
-                    <eui-table-filter #filter placeholder="Search filter..." (filterChange)="onFilterChange($event)">
+                    <eui-table-filter class="eui-u-mr-s" #filter placeholder="Search filter..."
+                        (filterChange)="onFilterChange($event)">
                     </eui-table-filter>
+
+                    <div *ngIf="!isEditMode" class="text-right">
+                        <button euiButton euiPrimary (click)="toggleEditMode($event)"><span
+                                euiLabel>Edit</span></button>
+                    </div>
+                    <div *ngIf="isEditMode" class="text-right eui-u-flex">
+                        <button euiButton euiPrimary euiOutline (click)="toggleEditMode($event)"
+                            class="eui-u-ml-m"><span euiIcon iconClass="eui-icon eui-icon-times"></span><span
+                                euiLabel>Exit edit mode</span></button>
+                    </div>
                 </eui-card-header-right-content>
             </eui-card-header>
             <eui-card-content>
@@ -41,7 +52,7 @@
                                 <th sortable sortOn="phone" *ngIf="visibleCols.indexOf('phone') !== -1">Phone</th>
                                 <th sortable sortOn="dob.date" *ngIf="visibleCols.indexOf('dob') !== -1">Date of birth
                                 </th>
-                                <th *ngIf="visibleCols.length > 0">Actions</th>
+                                <th *ngIf="visibleCols.length > 0 && isEditMode">Actions</th>
                             </tr>
                         </ng-template>
                         <ng-template let-row euiTemplate="body">
@@ -64,7 +75,7 @@
                                 </td>
                                 <td data-col-label="Date of birth" *ngIf="visibleCols.indexOf('dob') !== -1">{{
                                     row.dob.date | date:'mediumDate' }}</td>
-                                <td data-col-label="Actions" *ngIf="visibleCols.length > 0">
+                                <td data-col-label="Actions" *ngIf="visibleCols.length > 0 && isEditMode">
                                     <div class="eui-u-flex">
                                         <button euiButton euiBasicButton euiRounded euiIconButton euiPrimary euiSizeS
                                             euiTooltip="Edit" euiTooltipPrimary (click)="onRowEdit(row)">
