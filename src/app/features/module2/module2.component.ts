@@ -79,7 +79,8 @@ export class Module2Component implements OnInit {
         this.summaryTitle = "Delete contact";
         this.messageDetail = row.id.value;
         this.showGrowl('danger');
-        this.dataSource = this.dataSource.filter(contact => contact.id.value !== row.id.value)
+        this.dataSource = this.dataSource.filter(contact => contact.id.value !== row.id.value);
+        this.filteredData = this.filteredData;
     }
 
     showGrowl(type: string) {
